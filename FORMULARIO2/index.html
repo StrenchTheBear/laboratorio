@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <SCRIPT languaje="JavaScript">
+        function pulsar() {
+        alert("GRACIAS, ESTAMOS EN CONTACTO");
+        }
+        </SCRIPT>
+       
+    <title>FORMULARIO</title>
+</head>
+<body>
+    <div class="container">
+<form action="index.html" method="POST">
+    <h1>Contacto</h1>
+    <div class="form-group">
+        <label for="name"> Nombre:</label>
+        <input type="text" name="nombre" id="nam" required class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="apell"> Apellido:</label>
+        <input type="text" name="apellido" id="apel" required class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="email"> Email:</label>
+        <input type="email" name="email" id="mail" required class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="number"> Telefono:</label>
+        <input type="number" name="telefono" id="num" required class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="subj"> Subjet:</label>
+        <input type="text" name="subjet" id="sub" required class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="mens"> Mensaje:</label>
+        <textarea  name="mensaje" id="mens" cols="15" rows="5" required class="form-control"  ></textarea>
+    </div>
+    <button class="btn btn-primary" onclick="pulsar()" >ENVIAR</button>
+    
+</form>
+
+<script type="text/javascript">
+    function validar(){
+    var todo_correcto = true;
+    
+    if(document.getElementById('nam').value.length < 20 ){
+        todo_correcto=false;
+    }
+    
+    if(document.getElementById('apel').value.length < 10 ){
+        todo_correcto=false;
+    }
+    
+    var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+    var email = document.form1.email.value;
+    if (!expresion.test(email)){
+        todo_correcto=false;
+    }
+
+    if(isNaN(document.getElementById('num').value)){
+        todo_correcto=false;
+    }   
+
+    if(!todo_correcto){
+        alert('Algunos campos no estan correctos, vuelva a revisarlos');
+    } else {
+        alert('GRACIAS, ESTAMOS EN CONTACTO');
+    }
+    
+    return todo_correcto;
+    }
+</SCRIPT>
+
+
+    </div>
+</body>
+</html>
